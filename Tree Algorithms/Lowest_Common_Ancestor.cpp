@@ -18,7 +18,7 @@ int get_lca(int a, int b){
     if(depth[a] < depth[b]) swap(a,b);
     int k = depth[a] - depth[b];
     for(int j = LOG-1; j >= 0; j--){
-        if(k&(1<<j)){
+        if(k & (1<<j)){
             a = up[a][j];
         }
     }
