@@ -1,4 +1,4 @@
-const int N = 1e6;
+const int N = 1e7;
 int sieve[N];
 void make(){
     for(int i = 0; i < N; i++) sieve[i] = 1;
