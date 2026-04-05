@@ -1,4 +1,4 @@
-const int N = 1e6;
+const int N = 1e5;
 const int LOG = 20;
 int up[N][LOG];
 vector<int> G[N]; 
