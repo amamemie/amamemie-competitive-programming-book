@@ -94,7 +94,11 @@ def main():
         escribir_header(f)
 
         for root, dirs, files in os.walk("."):
-            if ".git" in root:
+            if root == ".":
+                continue
+
+            # solo nivel 1
+            if os.path.relpath(root).count(os.sep) >= 1:
                 continue
 
             cpp_files = [file for file in files if file.endswith(".cpp")]
@@ -109,14 +113,12 @@ def main():
                     subsection_name = format_subsection(file)
                     subsection_name = latex_escape(subsection_name)
 
-                    # versión para índice (solo primera letra mayúscula)
                     index_name = subsection_name.capitalize()
 
                     f.write(
                         f"\n\\subsection{{\\texorpdfstring{{{subsection_name}}}{{{index_name}}}}}\n"
                     )
                     f.write(f"\\lstinputlisting{{{path}}}\n")
-
         escribir_footer(f)
 
 if __name__ == "__main__":
