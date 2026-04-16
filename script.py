@@ -2,6 +2,17 @@ import os
 
 OUTPUT = "teambook.tex"
 
+def format_section(text):
+    text = os.path.basename(text)
+    text = text.replace("_", " ")
+    return text.upper()
+
+def format_subsection(text):
+    text = text.replace(".cpp", "")
+    text = text.replace("_", " ")
+    text = text.lower()
+    return text.capitalize()
+
 def latex_escape(text):
     return (text.replace("\\", "\\textbackslash{}")
                 .replace("_", "\\_")
@@ -13,39 +24,66 @@ def latex_escape(text):
 
 def escribir_header(f):
     f.write(r"""
-\documentclass[10pt,twocolumn]{article}
+\documentclass[11pt]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-\usepackage[margin=0.5in]{geometry}
+\usepackage[a4paper,margin=1in]{geometry}
+
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{hyperref}
 
-\lstset{
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue
+}
+
+\lstdefinestyle{cppstyle}{
     language=C++,
-    basicstyle=\ttfamily\tiny,
-    keywordstyle=\color{blue},
-    commentstyle=\color{gray},
-    stringstyle=\color{green!50!black},
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue!60!black},
+    commentstyle=\color{gray!70},
+    stringstyle=\color{green!40!black},
     numbers=left,
-    numberstyle=\tiny,
+    numberstyle=\tiny\color{gray},
     breaklines=true,
     frame=single,
+    rulecolor=\color{black!20},
     tabsize=2,
     showstringspaces=false,
+    columns=fullflexible,
+    keepspaces=true,
     literate=
         {→}{{$\rightarrow$}}1
         {≤}{{$\leq$}}1
         {≥}{{$\geq$}}1
 }
 
-\title{ICPC Team Notebook}
-\date{}
+\lstset{style=cppstyle}
 
 \begin{document}
-\maketitle
+
+% -------- PORTADA --------
+\begin{titlepage}
+    \centering
+    \vspace*{\fill}
+    {\Huge amamemie competitive programming book}
+    \vspace*{\fill}
+\end{titlepage}
+
+% -------- PAGINA EN BLANCO --------
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+% -------- INDICE --------
+\newpage
 \tableofcontents
+\newpage
 """)
 
 def escribir_footer(f):
@@ -56,23 +94,27 @@ def main():
         escribir_header(f)
 
         for root, dirs, files in os.walk("."):
-            # ignorar carpetas innecesarias
             if ".git" in root:
                 continue
 
             cpp_files = [file for file in files if file.endswith(".cpp")]
 
             if cpp_files:
-                section_name = root.replace("./", "")
-                section_name = latex_escape(section_name)
-
+                section_name = latex_escape(format_section(root))
                 f.write(f"\n\\section{{{section_name}}}\n")
 
                 for file in sorted(cpp_files):
                     path = os.path.join(root, file)
-                    safe_file = latex_escape(file)
 
-                    f.write(f"\n\\subsection{{{safe_file}}}\n")
+                    subsection_name = format_subsection(file)
+                    subsection_name = latex_escape(subsection_name)
+
+                    # versión para índice (solo primera letra mayúscula)
+                    index_name = subsection_name.capitalize()
+
+                    f.write(
+                        f"\n\\subsection{{\\texorpdfstring{{{subsection_name}}}{{{index_name}}}}}\n"
+                    )
                     f.write(f"\\lstinputlisting{{{path}}}\n")
 
         escribir_footer(f)

@@ -1,74 +1,139 @@
 
-\documentclass[10pt,twocolumn]{article}
+\documentclass[11pt]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-\usepackage[margin=0.5in]{geometry}
+\usepackage[a4paper,margin=1in]{geometry}
+
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{hyperref}
 
-\lstset{
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue
+}
+
+\lstdefinestyle{cppstyle}{
     language=C++,
-    basicstyle=\ttfamily\tiny,
-    keywordstyle=\color{blue},
-    commentstyle=\color{gray},
-    stringstyle=\color{green!50!black},
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue!60!black},
+    commentstyle=\color{gray!70},
+    stringstyle=\color{green!40!black},
     numbers=left,
-    numberstyle=\tiny,
+    numberstyle=\tiny\color{gray},
     breaklines=true,
     frame=single,
+    rulecolor=\color{black!20},
     tabsize=2,
     showstringspaces=false,
+    columns=fullflexible,
+    keepspaces=true,
     literate=
         {→}{{$\rightarrow$}}1
         {≤}{{$\leq$}}1
         {≥}{{$\geq$}}1
 }
 
-\title{ICPC Team Notebook}
-\date{}
+\lstset{style=cppstyle}
 
 \begin{document}
-\maketitle
+
+% -------- PORTADA --------
+\begin{titlepage}
+    \centering
+    \vspace*{\fill}
+    {\Huge amamemie competitive programming book}
+    \vspace*{\fill}
+\end{titlepage}
+
+% -------- PAGINA EN BLANCO --------
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+% -------- INDICE --------
+\newpage
 \tableofcontents
+\newpage
 
-\section{math}
+\section{MATH}
 
-\subsection{Binary\_Exponentiation.cpp}
-\lstinputlisting{./math/Binary_Exponentiation.cpp}
+\subsection{\texorpdfstring{Binary exponentiation}{Binary exponentiation}}
+\lstinputlisting{./amamemie-competitive-programming-book/math/Binary_Exponentiation.cpp}
 
-\subsection{Sieve\_of\_eratosthenes.cpp}
-\lstinputlisting{./math/Sieve_of_eratosthenes.cpp}
+\subsection{\texorpdfstring{Sieve of eratosthenes}{Sieve of eratosthenes}}
+\lstinputlisting{./amamemie-competitive-programming-book/math/Sieve_of_eratosthenes.cpp}
 
-\section{Tree Algorithms}
+\section{TREE ALGORITHMS}
 
-\subsection{Binary\_Lifting.cpp}
+\subsection{\texorpdfstring{Binary lifting}{Binary lifting}}
+\lstinputlisting{./amamemie-competitive-programming-book/Tree Algorithms/Binary_Lifting.cpp}
+
+\subsection{\texorpdfstring{Lowest common ancestor}{Lowest common ancestor}}
+\lstinputlisting{./amamemie-competitive-programming-book/Tree Algorithms/Lowest_Common_Ancestor.cpp}
+
+\section{DATA STRUCTURES}
+
+\subsection{\texorpdfstring{Disjoint set union}{Disjoint set union}}
+\lstinputlisting{./amamemie-competitive-programming-book/Data Structures/Disjoint_Set_Union.cpp}
+
+\subsection{\texorpdfstring{Sparse table}{Sparse table}}
+\lstinputlisting{./amamemie-competitive-programming-book/Data Structures/Sparse_Table.cpp}
+
+\section{GRAPH ALGORITHMS}
+
+\subsection{\texorpdfstring{Bfs}{Bfs}}
+\lstinputlisting{./amamemie-competitive-programming-book/Graph Algorithms/Bfs.cpp}
+
+\subsection{\texorpdfstring{Dfs}{Dfs}}
+\lstinputlisting{./amamemie-competitive-programming-book/Graph Algorithms/Dfs.cpp}
+
+\subsection{\texorpdfstring{Dijkstra}{Dijkstra}}
+\lstinputlisting{./amamemie-competitive-programming-book/Graph Algorithms/Dijkstra.cpp}
+
+\subsection{\texorpdfstring{Kruskal mst}{Kruskal mst}}
+\lstinputlisting{./amamemie-competitive-programming-book/Graph Algorithms/Kruskal_MST.cpp}
+
+\section{TREE ALGORITHMS}
+
+\subsection{\texorpdfstring{Binary lifting}{Binary lifting}}
 \lstinputlisting{./Tree Algorithms/Binary_Lifting.cpp}
 
-\subsection{Lowest\_Common\_Ancestor.cpp}
+\subsection{\texorpdfstring{Lowest common ancestor}{Lowest common ancestor}}
 \lstinputlisting{./Tree Algorithms/Lowest_Common_Ancestor.cpp}
 
-\section{Data Structures}
+\section{DATA STRUCTURES}
 
-\subsection{Disjoint\_Set\_Union.cpp}
+\subsection{\texorpdfstring{Disjoint set union}{Disjoint set union}}
 \lstinputlisting{./Data Structures/Disjoint_Set_Union.cpp}
 
-\subsection{Sparse\_Table.cpp}
+\subsection{\texorpdfstring{Sparse table}{Sparse table}}
 \lstinputlisting{./Data Structures/Sparse_Table.cpp}
 
-\section{Graph Algorithms}
+\section{MATH}
 
-\subsection{Bfs.cpp}
+\subsection{\texorpdfstring{Binary exponentiation}{Binary exponentiation}}
+\lstinputlisting{./Math/Binary_Exponentiation.cpp}
+
+\subsection{\texorpdfstring{Sieve of eratosthenes}{Sieve of eratosthenes}}
+\lstinputlisting{./Math/Sieve_of_eratosthenes.cpp}
+
+\section{GRAPH ALGORITHMS}
+
+\subsection{\texorpdfstring{Bfs}{Bfs}}
 \lstinputlisting{./Graph Algorithms/Bfs.cpp}
 
-\subsection{Dfs.cpp}
+\subsection{\texorpdfstring{Dfs}{Dfs}}
 \lstinputlisting{./Graph Algorithms/Dfs.cpp}
 
-\subsection{Dijkstra.cpp}
+\subsection{\texorpdfstring{Dijkstra}{Dijkstra}}
 \lstinputlisting{./Graph Algorithms/Dijkstra.cpp}
 
-\subsection{Kruskal\_MST.cpp}
+\subsection{\texorpdfstring{Kruskal mst}{Kruskal mst}}
 \lstinputlisting{./Graph Algorithms/Kruskal_MST.cpp}
 
 \end{document}
