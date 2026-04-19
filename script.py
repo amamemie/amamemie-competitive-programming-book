@@ -97,10 +97,6 @@ def main():
             if root == ".":
                 continue
 
-            # solo nivel 1
-            if os.path.relpath(root).count(os.sep) >= 1:
-                continue
-
             cpp_files = [file for file in files if file.endswith(".cpp")]
 
             if cpp_files:
@@ -110,15 +106,14 @@ def main():
                 for file in sorted(cpp_files):
                     path = os.path.join(root, file)
 
-                    subsection_name = format_subsection(file)
-                    subsection_name = latex_escape(subsection_name)
-
+                    subsection_name = latex_escape(format_subsection(file))
                     index_name = subsection_name.capitalize()
 
                     f.write(
                         f"\n\\subsection{{\\texorpdfstring{{{subsection_name}}}{{{index_name}}}}}\n"
                     )
                     f.write(f"\\lstinputlisting{{{path}}}\n")
+
         escribir_footer(f)
 
 if __name__ == "__main__":

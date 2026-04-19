@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.4.15)  19 APR 2026 10:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.4.15)  19 APR 2026 10:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -271,7 +271,7 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count293
 \l__pdf_internal_box=\box55
 )
-No file teambook.aux.
+(./teambook.aux)
 \openout1 = `teambook.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
@@ -292,6 +292,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
 LaTeX Font Info:    ... okay on input line 43.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
 LaTeX Font Info:    ... okay on input line 43.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -342,6 +343,7 @@ LaTeX Font Info:    ... okay on input line 43.
 \everyMPtoPDFconversion=\toks24
 )
 Package hyperref Info: Link coloring ON on input line 43.
+ (./teambook.out) (./teambook.out)
 \@outlinefile=\write3
 \openout3 = `teambook.out'.
 
@@ -357,8 +359,14 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.59 \newpage
-              [1]
-No file teambook.toc.
+              [1] (./teambook.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 2.
+)
 \tf@toc=\write4
 \openout4 = `teambook.toc'.
 
@@ -376,8 +384,6 @@ nput line 66.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 23.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 23.
-LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 23.
 ) (./Math/Binary_Exponentiation.cpp)
 
@@ -393,22 +399,15 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-Package rerunfilecheck Warning: File `teambook.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `teambook.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  AE5A9C9BF04837FF98E7056095ED5F59;1873.
+Package rerunfilecheck Info: File `teambook.out' has not changed.
+(rerunfilecheck)             Checksum: AE5A9C9BF04837FF98E7056095ED5F59;1873.
  ) 
 Here is how much of TeX's memory you used:
- 11898 strings out of 475178
- 177449 string characters out of 5766539
+ 11938 strings out of 475178
+ 178009 string characters out of 5766539
  1285136 words of memory out of 5000000
- 34449 multiletter control sequences out of 15000+600000
- 567742 words of font info for 53 fonts, out of 8000000 for 9000
+ 34477 multiletter control sequences out of 15000+600000
+ 570053 words of font info for 59 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,6n,79p,234b,1968s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/amamemie/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt0900.
@@ -416,13 +415,14 @@ Here is how much of TeX's memory you used:
 600.600pk> </home/amamemie/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/e
 cbx1200.600pk> </home/amamemie/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/
 ec/ecrm1095.600pk> </home/amamemie/.texlive2025/texmf-var/fonts/pk/ljfour/jknap
-pen/ec/ecbx1440.600pk> </home/amamemie/.texlive2025/texmf-var/fonts/pk/ljfour/j
-knappen/ec/ecrm2488.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy9.pfb>
-Output written on teambook.pdf (9 pages, 78893 bytes).
+pen/ec/ecbx1095.600pk> </home/amamemie/.texlive2025/texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecbx1440.600pk> </home/amamemie/.texlive2025/texmf-var/fonts/pk/ljfo
+ur/jknappen/ec/ecrm2488.600pk></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy9.pfb>
+Output written on teambook.pdf (9 pages, 96560 bytes).
 PDF statistics:
- 612 PDF objects out of 1000 (max. 8388607)
- 429 compressed objects within 5 object streams
+ 734 PDF objects out of 1000 (max. 8388607)
+ 498 compressed objects within 5 object streams
  313 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 129 words of extra memory for PDF output out of 10000 (max. 10000000)
 
