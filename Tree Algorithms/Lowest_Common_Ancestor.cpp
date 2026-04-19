@@ -24,7 +24,7 @@ int get_lca(int a, int b){
     }
     if(a == b) return a;
     for(int j = LOG-1; j >= 0; j--){
-        if(up[a][j] == up[b][j]){
+        if(up[a][j] != up[b][j]){
             a = up[a][j];
             b = up[b][j];
         }
